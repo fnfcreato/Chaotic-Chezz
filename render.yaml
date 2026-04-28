@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ruled-chess
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
